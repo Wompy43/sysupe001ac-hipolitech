@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SYSUPE001AC — „Un loc în cămin poate schimba un destin!” | Fundația HIPOLITECH</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0F3D73',
+            amberwarm: '#C97A16'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+        color: #0f172a !important;
+      }
+      .print-card {
+        box-shadow: none !important;
+        border: 1px solid #cbd5e1 !important;
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-900 font-sans antialiased selection:bg-[#0F3D73] selection:text-white">
+
+  <!-- Banner de simulare educațională (fără plăți reale și fără date personale/bancare/CNP) -->
+  <div class="bg-slate-950 text-amber-200 text-xs sm:text-sm px-4 py-2.5 text-center border-b border-slate-800 no-print">
+    <span class="font-bold uppercase tracking-wide text-[#FBBF24]">Simulare Educațională:</span>
+    Campania „Un loc în cămin poate schimba un destin!” (Fundația HIPOLITECH — POLITEHNICA București). Nu se procesează plăți reale și nu se colectează date personale, bancare sau CNP-uri.
+  </div>
+
+  <!-- Header principal: cod echipă SYSUPE001AC (editabil), referință campanie și link oficial -->
+  <header class="bg-gradient-to-br from-[#0F3D73] via-[#0c315c] to-slate-900 text-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+      <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-5">
+        <div class="max-w-3xl">
+          <div class="inline-flex flex-wrap items-center gap-2 bg-white/10 border border-white/20 rounded-full px-3.5 py-1 text-xs font-semibold mb-3">
+            <span>Fundația HIPOLITECH • POLITEHNICA București</span>
+            <span class="opacity-60">•</span>
+            <span>Orizont simulat: 6 luni</span>
+          </div>
+          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight">
+            „Un loc în cămin poate schimba un destin!”
+          </h1>
+          <p class="mt-2.5 text-sm sm:text-base text-slate-200 leading-relaxed">
+            Aplicație interactivă de simulare și planificare a finanțării private pentru un nou cămin studențesc, dedicat prioritar <strong>studenților cu rezultate academice deosebite</strong> și <strong>studenților cu dificultăți financiare</strong>.
+          </p>
+          <div class="mt-4 flex flex-wrap items-center gap-3">
+            <a
+              href="https://fundatia.upb.ro/proiecte-si-evenimente/un-loc-in-camin-poate-schimba-un-destin/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 rounded-xl bg-[#C97A16] hover:bg-amber-600 text-white text-xs sm:text-sm font-semibold px-4 py-2.5 transition shadow-sm"
+            >
+              Pagina oficială a campaniei (fundatia.upb.ro) ↗
+            </a>
+            <span class="text-xs text-slate-300">
+              Sursă oficială pentru informații reale și contribuții autentice.
+            </span>
+          </div>
+        </div>
+
+        <!-- Caseta cod unic echipă SYSUPE001AC (editabilă la nevoie) -->
+        <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 w-full sm:w-auto lg:min-w-[260px] shrink-0">
+          <label for="teamCodeInput" class="block text-xs font-semibold uppercase tracking-wider text-amber-200">
+            Cod unic echipă (editabil)
+          </label>
+          <input
+            id="teamCodeInput"
+            type="text"
+            value="SYSUPE001AC"
+            oninput="syncTeamCode()"
+            aria-label="Cod unic echipă"
+            class="mt-1.5 w-full rounded-xl bg-slate-950/60 border border-white/25 px-3 py-2 text-lg font-extrabold tracking-wider text-[#FBBF24] focus:outline-none focus:ring-2 focus:ring-[#C97A16]"
+          />
+          <p class="mt-1.5 text-[11px] text-slate-300 leading-snug">
+            Precompletat cu <strong id="teamCodeBadge" class="text-white">SYSUPE001AC</strong> pentru predare și pitch.
+          </p>
+        </div>
+      </div>
+
+      <!-- Cifre de referință obligatorii -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-6">
+        <div class="bg-white/10 border border-white/15 rounded-xl p-3.5">
+          <span class="block text-xs text-slate-200">Țintă exercițiu (6 luni)</span>
+          <strong class="text-lg font-bold text-white">250.000 lei brut</strong>
+          <span class="block text-[11px] text-slate-300 mt-0.5">Referință comună de concurs</span>
+        </div>
+        <div class="bg-white/10 border border-white/15 rounded-xl p-3.5">
+          <span class="block text-xs text-slate-200">Buget maxim campanie</span>
+          <strong class="text-lg font-bold text-[#FBBF24]">15.000 lei</strong>
+          <span class="block text-[11px] text-slate-300 mt-0.5">Plafon total pe 6 luni</span>
+        </div>
+        <div class="bg-white/10 border border-white/15 rounded-xl p-3.5">
+          <span class="block text-xs text-slate-200">Etapa 1: proiectare, avize, autorizații</span>
+          <strong class="text-lg font-bold text-white">1.250.000 lei</strong>
+          <span class="block text-[11px] text-slate-300 mt-0.5">Estimare publicată de Fundație</span>
+        </div>
+        <div class="bg-white/10 border border-white/15 rounded-xl p-3.5">
+          <span class="block text-xs text-slate-200">Investiție totală estimată</span>
+          <strong class="text-lg font-bold text-white">100.000.000 lei</strong>
+          <span class="block text-[11px] text-slate-300 mt-0.5">Estimare orientativă a proiectului</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigație pe tab-uri -->
+  <nav class="sticky top-0 z-30 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm no-print" aria-label="Secțiuni principale">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center gap-2 overflow-x-auto py-2.5">
+        <button
+          type="button"
+          id="tab-btn-simulator"
+          onclick="switchTab('simulator')"
+          class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap transition bg-[#0F3D73] text-white shadow-sm cursor-pointer"
+        >
+          1. Simulator Fundraising (6 luni)
+        </button>
+        <button
+          type="button"
+          id="tab-btn-strategy"
+          onclick="switchTab('strategy')"
+          class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap transition bg-slate-100 text-slate-700 hover:bg-slate-200 cursor-pointer"
+        >
+          2. Strategie (1 pagină)
+        </button>
+        <button
+          type="button"
+          id="tab-btn-finance"
+          onclick="switchTab('finance')"
+          class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap transition bg-slate-100 text-slate-700 hover:bg-slate-200 cursor-pointer"
+        >
+          3. Model Financiar &amp; Sensibilitate
+        </button>
+        <button
+          type="button"
+          id="tab-btn-ai-promo"
+          onclick="switchTab('ai-promo')"
+          class="tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap transition bg-slate-100 text-slate-700 hover:bg-slate-200 cursor-pointer"
+        >
+          4. Jurnal AI &amp; Promovare
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Conținut principal -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+
+    <!-- ==================== TAB 1: SIMULATOR FUNDRAISING (6 LUNI) ==================== -->
+    <section id="tab-simulator" class="tab-panel space-y-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+        <!-- Coloana stângă: parametri și butoane de control -->
+        <div class="lg:col-span-6 bg-white rounded-2xl border border-slate-200 shadow-sm p-5 sm:p-6 print-card">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+            <h2 class="text-lg sm:text-xl font-bold text-[#0F3D73]">Simulator Fundraising (6 luni)</h2>
+            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-50 text-[#C97A16] border border-amber-200">
+              Calcul determinist live
+            </span>
+          </div>
+          <p class="text-sm text-slate-600 mb-5">
+            Comută între cele două segmente prioritare, ajustează parametrii și verifică impactul asupra țintei de <strong>250.000 lei</strong> brut și asupra fondurilor nete după costul campaniei (max. <strong>15.000 lei</strong>).
+          </p>
+
+          <!-- Comutator segment -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5" role="group" aria-label="Selectare segment">
+            <button
+              type="button"
+              id="seg-alumni-btn"
+              onclick="selectSegment('alumni')"
+              class="text-left p-3.5 rounded-xl border-2 border-[#0F3D73] bg-blue-50/70 transition focus:outline-none cursor-pointer"
+            >
+              <span class="block text-sm font-bold text-[#0F3D73]">Absolvenți POLITEHNICA</span>
+              <span class="block text-xs text-slate-600 mt-0.5">Implicit: 500 donatori • 100 lei medie • 5% conversie</span>
+            </button>
+            <button
+              type="button"
+              id="seg-corporate-btn"
+              onclick="selectSegment('corporate')"
+              class="text-left p-3.5 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 transition focus:outline-none cursor-pointer"
+            >
+              <span class="block text-sm font-bold text-slate-900">Companii și parteneri</span>
+              <span class="block text-xs text-slate-600 mt-0.5">Implicit: 20 sponsori • 10.000 lei medie • 4% conversie</span>
+            </button>
+          </div>
+
+          <div class="space-y-4">
+            <!-- Număr contribuții / donatori / sponsori -->
+            <div>
+              <label for="simCount" id="simCountLabel" class="block text-sm font-semibold text-slate-800 mb-1">
+                Număr estimat de donatori individuali (6 luni)
+              </label>
+              <input
+                type="number"
+                id="simCount"
+                value="500"
+                step="1"
+                oninput="runSimulation()"
+                class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-base font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#0F3D73] focus:border-[#0F3D73]"
+              />
+              <p id="simCountHint" class="text-xs text-slate-500 mt-1">
+                Valoare implicită de referință: 500 donatori individuali.
+              </p>
+            </div>
+
+            <!-- Valoare medie demonstrativă -->
+            <div>
+              <label for="simAvgAmount" id="simAvgAmountLabel" class="block text-sm font-semibold text-slate-800 mb-1">
+                Donație medie demonstrativă per persoană (lei)
+              </label>
+              <input
+                type="number"
+                id="simAvgAmount"
+                value="100"
+                step="10"
+                oninput="runSimulation()"
+                class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-base font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#0F3D73] focus:border-[#0F3D73]"
+              />
+              <p id="simAvgAmountHint" class="text-xs text-slate-500 mt-1">
+                Valoare implicită de referință: 100 lei (exclusiv demonstrativă).
+              </p>
+            </div>
+
+            <!-- Rata de conversie (%) -->
+            <div>
+              <label for="simConversionRate" class="block text-sm font-semibold text-slate-800 mb-1">
+                Rată de conversie din contacte eligibile (%)
+              </label>
+              <input
+                type="number"
+                id="simConversionRate"
+                value="5"
+                step="0.1"
+                oninput="runSimulation()"
+                class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-base font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#0F3D73] focus:border-[#0F3D73]"
+              />
+              <p class="text-xs text-slate-500 mt-1">
+                Interval valid: mai mare decât 0% și cel mult 100%.
+              </p>
+            </div>
+
+            <!-- Buget campanie (max 15.000 lei) -->
+            <div>
+              <label for="simCampaignBudget" class="block text-sm font-semibold text-slate-800 mb-1">
+                Buget campanie alocat în scenariu (lei, max. 15.000 lei)
+              </label>
+              <input
+                type="number"
+                id="simCampaignBudget"
+                value="15000"
+                step="100"
+                oninput="runSimulation()"
+                class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-base font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#0F3D73] focus:border-[#0F3D73]"
+              />
+              <p class="text-xs text-slate-500 mt-1">
+                Plafonul maxim al exercițiului pe 6 luni este 15.000 lei.
+              </p>
+            </div>
+          </div>
+
+          <!-- Butoane de control obligatorii -->
+          <div class="flex flex-wrap items-center gap-2.5 mt-6 pt-4 border-t border-slate-100 no-print">
+            <button
+              type="button"
+              onclick="runSimulation()"
+              class="px-4 py-2.5 rounded-xl bg-[#0F3D73] hover:bg-[#0c315c] text-white text-xs sm:text-sm font-semibold transition shadow-sm cursor-pointer"
+            >
+              Calculează scenariul
+            </button>
+            <button
+              type="button"
+              onclick="loadReferenceScenario()"
+              class="px-4 py-2.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-[#9a5b0c] border border-amber-300 text-xs sm:text-sm font-semibold transition cursor-pointer"
+            >
+              Scenariu de referință (250k)
+            </button>
+            <button
+              type="button"
+              onclick="triggerInvalidCaseDemo()"
+              class="px-4 py-2.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-800 border border-rose-200 text-xs sm:text-sm font-semibold transition cursor-pointer"
+            >
+              Testează caz invalid
+            </button>
+            <button
+              type="button"
+              onclick="clearSimulationInputs()"
+              class="px-3.5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm font-medium transition cursor-pointer"
+            >
+              Golește câmpurile
+            </button>
+          </div>
+
+          <!-- Alertă controlată pentru date lipsă / invalide -->
+          <div
+            id="simErrorAlert"
+            role="alert"
+            aria-live="polite"
+            class="hidden mt-4 rounded-xl bg-rose-50 border border-rose-300 p-3.5 text-sm text-rose-900"
+          >
+            <div class="font-bold">Blocare controlată — Date invalide sau incomplete</div>
+            <p id="simErrorText" class="mt-1 text-xs sm:text-sm leading-relaxed"></p>
+          </div>
+        </div>
+
+        <!-- Coloana dreaptă: rezultate live, acoperire, promisiuni vs încasări și disclaimer -->
+        <div class="lg:col-span-6 space-y-5">
+          <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 sm:p-6 print-card">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+              <div>
+                <h2 class="text-lg sm:text-xl font-bold text-[#0F3D73]">Rezultate simulate (6 luni)</h2>
+                <p id="simActiveSegmentLabel" class="text-xs sm:text-sm font-medium text-slate-700">
+                  Segment activ: Absolvenți POLITEHNICA
+                </p>
+              </div>
+              <span id="simStatusBadge" class="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+                Date valide
+              </span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <div class="rounded-xl bg-slate-50 border border-slate-200/90 p-3.5">
+                <span class="block text-xs font-medium text-slate-500">Contribuții brute segment</span>
+                <strong id="outSegmentGross" class="text-xl font-extrabold text-[#0F3D73]">50.000 lei</strong>
+                <span id="outCompanionNote" class="block text-[11px] text-slate-500 mt-0.5">+ 200.000 lei Companii și parteneri (referință)</span>
+              </div>
+
+              <div class="rounded-xl bg-blue-50/70 border border-blue-200 p-3.5">
+                <span class="block text-xs font-medium text-[#0F3D73]">Total contribuții brute (6 luni)</span>
+                <strong id="outTotalGross" class="text-xl font-extrabold text-[#0F3D73]">250.000 lei</strong>
+                <span class="block text-[11px] text-[#0F3D73]/75 mt-0.5">Înainte de deducerea costului campaniei</span>
+              </div>
+
+              <div class="rounded-xl bg-emerald-50/70 border border-emerald-200 p-3.5">
+                <span class="block text-xs font-medium text-emerald-900">Fonduri nete după cost campanie</span>
+                <strong id="outNetFunds" class="text-xl font-extrabold text-emerald-800">235.000 lei</strong>
+                <span id="outBudgetSubtext" class="block text-[11px] text-emerald-900/75 mt-0.5">Total brut − 15.000 lei cost campanie</span>
+              </div>
+
+              <div class="rounded-xl bg-slate-50 border border-slate-200/90 p-3.5">
+                <span class="block text-xs font-medium text-slate-500">Contacte eligibile de abordat</span>
+                <strong id="outEligibleReach" class="text-xl font-extrabold text-slate-900">10.000</strong>
+                <span class="block text-[11px] text-slate-500 mt-0.5">Contribuții estimate / rata de conversie</span>
+              </div>
+
+              <div class="rounded-xl bg-slate-50 border border-slate-200/90 p-3.5">
+                <span class="block text-xs font-medium text-slate-500">Cost per contribuție confirmată</span>
+                <strong id="outCostPerContrib" class="text-lg font-bold text-slate-900">30,00 lei</strong>
+                <span class="block text-[11px] text-slate-500 mt-0.5">Buget segment / contribuții estimate</span>
+              </div>
+
+              <div class="rounded-xl bg-amber-50/70 border border-amber-200 p-3.5">
+                <span class="block text-xs font-medium text-[#9a5b0c]">Acoperire din 250.000 lei &amp; 1.250.000 lei</span>
+                <strong id="outCoverageDual" class="text-base font-extrabold text-[#9a5b0c]">100,0% din 250k • 20,0% din 1,25M</strong>
+                <span id="outTotalStageShare" class="block text-[11px] text-[#9a5b0c]/80 mt-0.5">0,25% din 100.000.000 lei investiție totală</span>
+              </div>
+            </div>
+
+            <!-- Bară progres față de 250.000 lei -->
+            <div class="mt-5 pt-4 border-t border-slate-100">
+              <div class="flex items-center justify-between text-xs sm:text-sm font-semibold mb-1.5">
+                <span class="text-slate-700">% acoperire față de ținta de 250.000 lei brut</span>
+                <span id="outTargetPct" class="text-[#0F3D73] font-bold">100,0%</span>
+              </div>
+              <div class="w-full h-3 bg-slate-200 rounded-full overflow-hidden">
+                <div
+                  id="outProgressBar"
+                  class="h-full bg-gradient-to-r from-[#0F3D73] via-blue-700 to-[#C97A16] rounded-full transition-all duration-300"
+                  style="width: 100%;"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Separarea explicită: promisiuni / angajamente vs. încasări efective -->
+            <div class="mt-5 rounded-xl bg-slate-50 border border-slate-200 p-4">
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <h3 class="text-xs sm:text-sm font-bold text-[#0F3D73] uppercase tracking-wide">
+                  Promisiuni / angajamente vs. încasări efective (ilustrativ)
+                </h3>
+                <span class="text-[11px] text-slate-500">Nu se presupun încasate 100%</span>
+              </div>
+              <p id="outPromiseVsCollected" class="text-xs sm:text-sm text-slate-700 leading-relaxed mt-1">
+                Din totalul brut estimat de <strong>250.000 lei</strong>, un model ilustrativ de încasare (80% pe individuali, 75% pe sponsorizări) indică <strong>190.000 lei încasați efectiv</strong> și <strong>60.000 lei promisiuni/angajamente în curs de încasare</strong>.
+              </p>
+            </div>
+
+            <!-- Mesaj responsabil fără promisiuni false -->
+            <div class="mt-4 rounded-xl bg-amber-50/90 border border-amber-200 p-4">
+              <h3 id="outSegmentMsgTitle" class="text-sm font-bold text-[#9a5b0c]">
+                Mesaj responsabil — Absolvenți POLITEHNICA
+              </h3>
+              <p id="outSegmentMsgBody" class="mt-1 text-xs sm:text-sm text-slate-800 leading-relaxed">
+                Contribuțiile susțin obiectivul comun al Fundației HIPOLITECH pentru construirea unui nou cămin studențesc (prioritar pentru studenți merituoși și cu dificultăți financiare). Simulare exclusiv demonstrativă: donațiile nu cumpără o cameră sau un loc de cazare, nu garantează deductibilități fiscale neverificate și nu reprezintă plăți reale.
+              </p>
+            </div>
+
+            <!-- Link oficial și avertisment de non-plată -->
+            <div class="mt-4 rounded-xl bg-blue-50/70 border border-blue-200 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <div class="text-xs sm:text-sm text-slate-800">
+                <strong class="block font-bold text-[#0F3D73]">Fără plăți reale în aplicație</strong>
+                <span>Pentru informații oficiale și modalități autentice de sprijin, accesați pagina campaniei.</span>
+              </div>
+              <a
+                href="https://fundatia.upb.ro/proiecte-si-evenimente/un-loc-in-camin-poate-schimba-un-destin/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-[#0F3D73] hover:bg-[#0c315c] text-white text-xs sm:text-sm font-semibold transition shrink-0 text-center"
+              >
+                Deschide pagina oficială ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 2: STRATEGIE (1 PAGINĂ) ==================== -->
+    <section id="tab-strategy" class="tab-panel hidden space-y-6">
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 print-card">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pb-4 border-b border-slate-200">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-[#C97A16]">Strategie (1 pagină) • Echipa <span class="team-code-mirror">SYSUPE001AC</span></span>
+            <h2 class="text-xl sm:text-2xl font-extrabold text-[#0F3D73] mt-0.5">
+              „Un loc în cămin poate schimba un destin!” — Plan de 6 luni
+            </h2>
+          </div>
+          <button
+            type="button"
+            onclick="window.print()"
+            class="px-4 py-2 rounded-xl bg-[#0F3D73] hover:bg-[#0c315c] text-white text-xs font-semibold transition self-start no-print cursor-pointer"
+          >
+            Printează / Salvează 1 pagină PDF
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-6">
+          <div class="rounded-xl bg-slate-50 border border-slate-200/90 p-4">
+            <h3 class="text-sm font-bold uppercase tracking-wide text-[#0F3D73] mb-2">1. Problema</h3>
+            <p class="text-sm text-slate-700 leading-relaxed">
+              Construirea unui nou cămin studențesc la POLITEHNICA București — dedicat prioritar studenților cu rezultate academice deosebite și celor cu dificultăți financiare — are o investiție totală estimată la <strong>100.000.000 lei</strong> (<strong>1.250.000 lei</strong> etapa inițială de proiectare, avize și autorizații). În exercițiul de 6 luni (țintă <strong>250.000 lei</strong> brut, buget campanie max. <strong>15.000 lei</strong>), provocarea este transformarea interesului în contribuții măsurabile, evitând amânarea deciziilor și confuzia dintre promisiuni și încasări.
+            </p>
+          </div>
+
+          <div class="rounded-xl bg-slate-50 border border-slate-200/90 p-4">
+            <h3 class="text-sm font-bold uppercase tracking-wide text-[#0F3D73] mb-2">2. Soluția digitală și comunicarea responsabilă</h3>
+            <p class="text-sm text-slate-700 leading-relaxed">
+              Oferim un <strong>simulator web interactiv</strong> care modelează contribuțiile, rata de conversie, baza eligibilă și bugetul campaniei (max. 15.000 lei) și direcționează către <code>fundatia.upb.ro</code>. Respectăm strict limitele etice: <strong>nu afirmăm</strong> că o donație cumpără o cameră sau un loc de cazare, <strong>nu promitem</strong> deductibilități fiscale neverificate și <strong>nu</strong> inventăm parteneriate sau beneficiari.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2 segmente prioritare -->
+        <div class="mt-6">
+          <h3 class="text-sm font-bold uppercase tracking-wide text-[#0F3D73] mb-3">3. Cele 2 segmente prioritare</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="rounded-xl border border-blue-200 bg-blue-50/40 p-4 text-sm text-slate-800 space-y-1.5">
+              <div class="font-bold text-[#0F3D73] text-base">Segment 1: Absolvenți POLITEHNICA</div>
+              <div><strong>Cine ia decizia:</strong> Absolventul (persoană fizică), decizie individuală.</div>
+              <div><strong>Motivație:</strong> Susținerea studenților merituoși și a celor cu dificultăți financiare.</div>
+              <div><strong>Obstacol:</strong> Amânarea deciziei și lipsa clarității asupra modului în care contribuția ajută obiectivul comun.</div>
+              <div><strong>Canal legitim:</strong> Comunități de absolvenți, comunicări/evenimente instituționale și pagina oficială a campaniei.</div>
+            </div>
+
+            <div class="rounded-xl border border-amber-200 bg-amber-50/40 p-4 text-sm text-slate-800 space-y-1.5">
+              <div class="font-bold text-[#9a5b0c] text-base">Segment 2: Companii și parteneri</div>
+              <div><strong>Cine ia decizia:</strong> Managementul / departamentul de sustenabilitate, CSR sau parteneriate.</div>
+              <div><strong>Motivație:</strong> Sprijinirea educației tehnice și a comunității universitare.</div>
+              <div><strong>Obstacol:</strong> Ciclu de aprobare intern mai lung și diferența între promisiunea de sponsorizare și încasare.</div>
+              <div><strong>Canal legitim:</strong> Outreach instituțional structurat, prezentare de proiect și discuții directe de parteneriat.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Măsurare pe pâlnie și plan în 3 pași pe 6 luni -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 mt-6">
+          <div class="lg:col-span-5 rounded-xl border border-slate-200 p-4 bg-white">
+            <h3 class="text-sm font-bold uppercase tracking-wide text-[#0F3D73] mb-2">4. Măsurare pe pâlnie</h3>
+            <ol class="list-decimal pl-5 text-xs sm:text-sm text-slate-700 space-y-1.5">
+              <li><strong>Vizitatori:</strong> accesări ale paginii/simulatorului (distinct de simpla afișare a unei postări).</li>
+              <li><strong>Interes exprimat:</strong> simulări completate și solicitări de discuție.</li>
+              <li><strong>Donații confirmate:</strong> contribuții individuale finalizate (fără dublă numărare).</li>
+              <li><strong>Sponsorizări încasate:</strong> sume efectiv încasate, separate de promisiunile în curs.</li>
+            </ol>
+          </div>
+
+          <div class="lg:col-span-7 rounded-xl border border-blue-200 bg-blue-50/40 p-4">
+            <h3 class="text-sm font-bold uppercase tracking-wide text-[#0F3D73] mb-2.5">5. Plan în 3 pași (6 luni) &amp; ajustare dacă rezultatele sunt sub așteptări</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs sm:text-sm text-slate-800">
+              <div class="bg-white rounded-xl p-3.5 border border-blue-100">
+                <span class="text-xs font-extrabold text-[#0F3D73] block mb-1">PASUL 1 • LUNA 1</span>
+                <strong class="block text-slate-900 mb-1">Lansare &amp; calibrare</strong>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  Lansăm simulatorul și testăm mesajele/CTA-urile. Dacă interesul sau conversia sunt sub așteptări, schimbăm unghiul mesajului și realocăm bugetul de testare/rezervă către canalul cu cel mai bun randament.
+                </p>
+              </div>
+              <div class="bg-white rounded-xl p-3.5 border border-blue-100">
+                <span class="text-xs font-extrabold text-[#0F3D73] block mb-1">PASUL 2 • LUNILE 2–4</span>
+                <strong class="block text-slate-900 mb-1">Tracțiune &amp; B2B</strong>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  Activăm absolvenții pentru contribuții individuale și purtăm discuții structurate cu companii eligibile, monitorizând separat promisiunile și încasările.
+                </p>
+              </div>
+              <div class="bg-white rounded-xl p-3.5 border border-blue-100">
+                <span class="text-xs font-extrabold text-[#0F3D73] block mb-1">PASUL 3 • LUNILE 5–6</span>
+                <strong class="block text-slate-900 mb-1">Consolidare &amp; raportare</strong>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  Revenim la contactele deschise, urmărim încasarea angajamentelor și evaluăm rezultatele față de ținta de 250.000 lei brut și bugetul de 15.000 lei.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 3: MODEL FINANCIAR & SENSIBILITATE ==================== -->
+    <section id="tab-finance" class="tab-panel hidden space-y-6">
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 sm:p-6 print-card">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-[#C97A16]">Model Financiar &amp; Sensibilitate • <span class="team-code-mirror">SYSUPE001AC</span></span>
+            <h2 class="text-lg sm:text-xl font-bold text-[#0F3D73] mt-0.5">
+              Ipoteze editabile (6 luni), buget ≤ 15.000 lei, scenarii de sensibilitate și date lipsă
+            </h2>
+          </div>
+          <span class="text-xs font-semibold px-3 py-1 rounded-lg bg-slate-100 text-slate-700 self-start">
+            Monedă: lei • Orizont: 6 luni
+          </span>
+        </div>
+
+        <!-- Ipoteze editabile -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 mb-5 bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <div>
+            <label for="finAlumniCount" class="block text-xs font-semibold text-slate-700 mb-1">Donatori indiv. (nr.)</label>
+            <input id="finAlumniCount" type="number" value="500" min="0" step="1" oninput="updateFinanceModel()" class="w-full rounded-lg border border-slate-300 bg-white px-2.5 py-1.5 text-sm font-semibold" />
+          </div>
+          <div>
+            <label for="finAlumniAvg" class="block text-xs font-semibold text-slate-700 mb-1">Donație medie (lei)</label>
+            <input id="finAlumniAvg" type="number" value="100" min="0" step="10" oninput="updateFinanceModel()" class="w-full rounded-lg border border-slate-300 bg-white px-2.5 py-1.5 text-sm font-semibold" />
+          </div>
+          <div>
+            <label for="finCorpCount" class="block text-xs font-semibold text-slate-700 mb-1">Sponsori corp. (nr.)</label>
+            <input id="finCorpCount" type="number" value="20" min="0" step="1" oninput="updateFinanceModel()" class="w-full rounded-lg border border-slate-300 bg-white px-2.5 py-1.5 text-sm font-semibold" />
+          </div>
+          <div>
+            <label for="finCorpAvg" class="block text-xs font-semibold text-slate-700 mb-1">Medie sponsor (lei)</label>
+            <input id="finCorpAvg" type="number" value="10000" min="0" step="500" oninput="updateFinanceModel()" class="w-full rounded-lg border border-slate-300 bg-white px-2.5 py-1.5 text-sm font-semibold" />
+          </div>
+          <div>
+            <label for="finBudget" class="block text-xs font-semibold text-slate-700 mb-1">Buget campanie (max 15k)</label>
+            <input id="finBudget" type="number" value="15000" min="0" max="15000" step="500" oninput="updateFinanceModel()" class="w-full rounded-lg border border-slate-300 bg-white px-2.5 py-1.5 text-sm font-semibold" />
+          </div>
+        </div>
+
+        <!-- Tabel calcule obligatorii + repartizare buget (fără dublă numărare) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+          <div class="lg:col-span-7 overflow-x-auto">
+            <h3 class="text-sm font-bold text-[#0F3D73] uppercase tracking-wide mb-2">Calcule obligatorii (6 luni)</h3>
+            <table class="w-full text-sm text-left border-collapse border border-slate-200 rounded-lg overflow-hidden">
+              <thead>
+                <tr class="bg-[#0F3D73] text-white">
+                  <th class="py-2 px-3 font-semibold">Indicator</th>
+                  <th class="py-2 px-3 font-semibold text-right">Valoare</th>
+                  <th class="py-2 px-3 font-semibold">Formulă / Notă</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200">
+                <tr>
+                  <td class="py-2 px-3 font-medium">Donații individuale brute</td>
+                  <td id="finOutAlumniGross" class="py-2 px-3 text-right font-bold">50.000 lei</td>
+                  <td class="py-2 px-3 text-xs text-slate-500">nr. donatori × donație medie</td>
+                </tr>
+                <tr>
+                  <td class="py-2 px-3 font-medium">Sponsorizări corporate brute</td>
+                  <td id="finOutCorpGross" class="py-2 px-3 text-right font-bold">200.000 lei</td>
+                  <td class="py-2 px-3 text-xs text-slate-500">nr. sponsori × contribuție medie</td>
+                </tr>
+                <tr class="bg-blue-50/60">
+                  <td class="py-2 px-3 font-bold text-[#0F3D73]">Total contribuții brute</td>
+                  <td id="finOutTotalGross" class="py-2 px-3 text-right font-extrabold text-[#0F3D73]">250.000 lei</td>
+                  <td class="py-2 px-3 text-xs text-slate-600">individuale + sponsorizări</td>
+                </tr>
+                <tr>
+                  <td class="py-2 px-3 font-medium">Costul campaniei (6 luni)</td>
+                  <td id="finOutCampaignCost" class="py-2 px-3 text-right font-bold">15.000 lei</td>
+                  <td class="py-2 px-3 text-xs text-slate-500">sumă pe direcții, ≤ 15.000 lei</td>
+                </tr>
+                <tr class="bg-emerald-50/70">
+                  <td class="py-2 px-3 font-bold text-emerald-900">Fonduri nete după cost campanie</td>
+                  <td id="finOutNet" class="py-2 px-3 text-right font-extrabold text-emerald-800">235.000 lei</td>
+                  <td class="py-2 px-3 text-xs text-slate-600">contribuții brute − cost campanie</td>
+                </tr>
+                <tr>
+                  <td class="py-2 px-3 font-medium">Cost per contribuție confirmată</td>
+                  <td id="finOutCostPerDonor" class="py-2 px-3 text-right font-bold">28,85 lei</td>
+                  <td class="py-2 px-3 text-xs text-slate-500">buget / total contribuții estimate</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="lg:col-span-5">
+            <h3 class="text-sm font-bold text-[#0F3D73] uppercase tracking-wide mb-2">Repartizare buget (≤ 15.000 lei, fără dublă numărare)</h3>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-3.5 text-xs sm:text-sm text-slate-700 space-y-1.5">
+              <div class="flex justify-between"><span>Promovare rețele sociale (absolvenți)</span><strong>4.000 lei</strong></div>
+              <div class="flex justify-between"><span>Promovare și outreach companii</span><strong>3.000 lei</strong></div>
+              <div class="flex justify-between"><span>Pagină / prototip și măsurare</span><strong>2.500 lei</strong></div>
+              <div class="flex justify-between"><span>Conținut vizual și mesaje</span><strong>2.000 lei</strong></div>
+              <div class="flex justify-between"><span>Parteneriate și comunități</span><strong>1.500 lei</strong></div>
+              <div class="flex justify-between"><span>Teste A/B și optimizare</span><strong>1.000 lei</strong></div>
+              <div class="flex justify-between"><span>Rezervă motivată</span><strong>1.000 lei</strong></div>
+              <div class="flex justify-between pt-2 border-t border-slate-300 font-extrabold text-[#0F3D73]">
+                <span>Total alocat (fără dublă numărare)</span>
+                <span>15.000 lei</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scenarii de sensibilitate -->
+        <div class="mt-6">
+          <h3 class="text-base font-bold text-[#0F3D73] mb-3">Scenarii de sensibilitate (actualizate automat)</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="rounded-xl border border-slate-200 p-4 bg-slate-50">
+              <span class="text-xs font-bold text-[#C97A16] uppercase">Sensibilitate 1</span>
+              <h4 class="font-bold text-slate-900 mt-0.5">Donație medie individuală −30%</h4>
+              <p id="sensDrop30Desc" class="text-xs text-slate-600 mt-1 leading-relaxed">
+                La 70 lei medie individuală: donații indiv. 35.000 lei, total brut 235.000 lei, fonduri nete 220.000 lei.
+              </p>
+            </div>
+
+            <div class="rounded-xl border border-slate-200 p-4 bg-slate-50">
+              <span class="text-xs font-bold text-[#C97A16] uppercase">Sensibilitate 2</span>
+              <h4 class="font-bold text-slate-900 mt-0.5">Sponsori corporate înjumătățiți (−50%)</h4>
+              <p id="sensHalfCorpDesc" class="text-xs text-slate-600 mt-1 leading-relaxed">
+                La 10 sponsori: sponsorizări 100.000 lei, total brut 150.000 lei, fonduri nete 135.000 lei.
+              </p>
+            </div>
+
+            <div class="rounded-xl border border-slate-200 p-4 bg-slate-50">
+              <span class="text-xs font-bold text-rose-800 uppercase">Sensibilitate 3</span>
+              <h4 class="font-bold text-slate-900 mt-0.5">Scenariu cumulat (−30% medie &amp; −50% sponsori)</h4>
+              <p id="sensBothDesc" class="text-xs text-slate-600 mt-1 leading-relaxed">
+                Total brut 135.000 lei și fonduri nete 120.000 lei (la 15.000 lei buget campanie).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Promisiuni vs. Încasări + Informații lipsă -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 mt-6">
+          <div class="lg:col-span-7 rounded-xl border border-blue-200 bg-blue-50/30 p-4">
+            <h3 class="text-sm font-bold text-[#0F3D73] mb-1.5">Promisiuni / angajamente vs. încasări efective</h3>
+            <p class="text-xs text-slate-600 mb-3">
+              Nu se presupune automat că toate promisiunile de sponsorizare sunt încasate în cele 6 luni. Exemplu ilustrativ de urmărire separată (80% încasare pe individuali, 75% pe sponsorizări):
+            </p>
+            <div class="overflow-x-auto">
+              <table class="w-full text-xs text-left border-collapse bg-white rounded-lg overflow-hidden border border-slate-200">
+                <thead>
+                  <tr class="bg-slate-100 text-slate-800 border-b border-slate-200">
+                    <th class="py-2 px-2.5 font-semibold">Categorie</th>
+                    <th class="py-2 px-2.5 font-semibold text-right">Estimat / Promis</th>
+                    <th class="py-2 px-2.5 font-semibold text-right">Încasat (ilustrativ)</th>
+                    <th class="py-2 px-2.5 font-semibold text-right">Promisiuni neîncasate</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100">
+                  <tr>
+                    <td class="py-2 px-2.5 font-medium">Donații individuale</td>
+                    <td id="pvEstAlumni" class="py-2 px-2.5 text-right">50.000 lei</td>
+                    <td id="pvRecAlumni" class="py-2 px-2.5 text-right text-emerald-700 font-semibold">40.000 lei</td>
+                    <td id="pvPromAlumni" class="py-2 px-2.5 text-right text-[#9a5b0c]">10.000 lei</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-2.5 font-medium">Sponsorizări corporate</td>
+                    <td id="pvEstCorp" class="py-2 px-2.5 text-right">200.000 lei</td>
+                    <td id="pvRecCorp" class="py-2 px-2.5 text-right text-emerald-700 font-semibold">150.000 lei</td>
+                    <td id="pvPromCorp" class="py-2 px-2.5 text-right text-[#9a5b0c]">50.000 lei</td>
+                  </tr>
+                  <tr class="font-bold bg-slate-50">
+                    <td class="py-2 px-2.5">Total</td>
+                    <td id="pvEstTotal" class="py-2 px-2.5 text-right">250.000 lei</td>
+                    <td id="pvRecTotal" class="py-2 px-2.5 text-right text-emerald-800">190.000 lei</td>
+                    <td id="pvPromTotal" class="py-2 px-2.5 text-right text-[#9a5b0c]">60.000 lei</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <h3 class="text-sm font-bold text-[#0F3D73] mb-2">Informații lipsă pentru validarea în realitate</h3>
+            <ul class="list-disc pl-4 text-xs sm:text-sm text-slate-700 space-y-1.5 leading-relaxed">
+              <li>Ratele reale de conversie istorice pe absolvenți și companii în campanii similare.</li>
+              <li>Durata reală a ciclului de aprobare și bugetare în companiile vizate.</li>
+              <li>Ponderea contribuțiilor recurente vs. unice și ritmul efectiv de încasare.</li>
+              <li>Structura detaliată a costurilor operaționale și acordurile concrete de parteneriat.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 4: JURNAL AI & PROMOVARE ==================== -->
+    <section id="tab-ai-promo" class="tab-panel hidden space-y-6">
+      <!-- Jurnal AI -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 print-card">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 pb-4 border-b border-slate-200">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-[#C97A16]">Jurnal AI • Echipa <span class="team-code-mirror">SYSUPE001AC</span></span>
+            <h2 class="text-lg sm:text-xl font-bold text-[#0F3D73] mt-0.5">
+              Jurnal de utilizare critică a inteligenței artificiale
+            </h2>
+          </div>
+          <span class="text-xs font-semibold px-3 py-1 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200 self-start">
+            100% determinist la rulare (fără AI)
+          </span>
+        </div>
+
+        <div class="mt-5 space-y-3">
+          <div class="rounded-xl border border-slate-200 p-4 bg-slate-50">
+            <div class="text-xs font-bold text-[#0F3D73] uppercase">Prompt 1 — Structura simulatorului și validarea cazurilor invalide</div>
+            <p class="text-xs sm:text-sm text-slate-800 mt-1 italic">
+              „Creează un simulator web interactiv de fundraising pe 6 luni pentru campania Fundației HIPOLITECH, cu comutare între Absolvenți POLITEHNICA și Companii și parteneri, validare pentru date lipsă/invalide și fără plăți reale.”
+            </p>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1.5">
+              <strong>Rezultat AI &amp; decizia echipei:</strong> AI-ul a propus interfața și formulele; echipa a verificat calculele, a adăugat blocarea controlată (inclusiv testul de 145% conversie și golirea câmpurilor) și a eliminat orice element care putea părea plată reală.
+            </p>
+          </div>
+
+          <div class="rounded-xl border border-slate-200 p-4 bg-slate-50">
+            <div class="text-xs font-bold text-[#0F3D73] uppercase">Prompt 2 — Modelul financiar și analizele de sensibilitate</div>
+            <p class="text-xs sm:text-sm text-slate-800 mt-1 italic">
+              „Structurerază modelul financiar pe 6 luni (țintă 250.000 lei brut, buget max. 15.000 lei) cu scenarii pentru donație medie individuală −30% și sponsori corporate înjumătățiți.”
+            </p>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1.5">
+              <strong>Rezultat AI &amp; decizia echipei:</strong> AI-ul a generat calculele comparative; echipa a separat fondurile brute de cele nete, a adăugat evidența promisiuni vs. încasări și a listat informațiile lipsă din realitate.
+            </p>
+          </div>
+
+          <div class="rounded-xl border border-slate-200 p-4 bg-slate-50">
+            <div class="text-xs font-bold text-[#0F3D73] uppercase">Prompt 3 — Strategie pe o pagină și material de promovare</div>
+            <p class="text-xs sm:text-sm text-slate-800 mt-1 italic">
+              „Redactează strategia pe 1 pagină și mesajul de promovare pentru absolvenți și companii pe baza reperele oficiale HIPOLITECH (1.250.000 lei etapa inițială; 100.000.000 lei investiție totală estimată).”
+            </p>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1.5">
+              <strong>Rezultat AI &amp; decizia echipei:</strong> AI-ul a structurat textul și planul în 3 pași; echipa a aliniat formulările la cerințele etice și a verificat fiecare cifră.
+            </p>
+          </div>
+        </div>
+
+        <!-- Eroare AI prinsă și corectată + rulare fără AI -->
+        <div class="mt-6 rounded-xl border border-amber-300 bg-amber-50/85 p-4 sm:p-5 space-y-2.5">
+          <h3 class="text-sm font-bold uppercase tracking-wide text-[#9a5b0c]">
+            Eroare / afirmație neverificată prinsă și corectată + funcționare fără AI la rulare
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-800 leading-relaxed">
+            <strong>Ce a sugerat inițial AI-ul:</strong> Într-o schiță inițială, AI-ul a formulat ideea că o sponsorizare de 10.000 lei sau o donație cumulată poate fi comunicată ca „finanțarea unei camere în cămin” și a sugerat menționarea „deductibilității fiscale garantate”.
+          </p>
+          <p class="text-xs sm:text-sm text-slate-800 leading-relaxed">
+            <strong>Cum am verificat și corectat:</strong> Din informațiile oficiale rezultă reperele de 1.250.000 lei și 100.000.000 lei, fără un cost confirmat per cameră, iar donațiile nu reprezintă rezervări de locuri în cămin și nici garanții fiscale neverificate. Am eliminat aceste afirmații și am precizat că fiecare contribuție susține obiectivul comun de finanțare al Fundației HIPOLITECH.
+          </p>
+          <p class="text-xs sm:text-sm text-slate-800 leading-relaxed">
+            <strong>Funcționare la rulare (fără apeluri AI):</strong> Aplicația rulează 100% determinist în browser prin JavaScript nativ — fără apeluri către modele AI la runtime, fără latență și fără riscul de halucinații numerice în timpul folosirii.
+          </p>
+        </div>
+      </div>
+
+      <!-- Material de promovare: afiș, mesaj și CTA -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 print-card">
+        <div class="pb-4 border-b border-slate-200">
+          <span class="text-xs font-bold uppercase tracking-wider text-[#C97A16]">Material de promovare • Echipa <span class="team-code-mirror">SYSUPE001AC</span></span>
+          <h2 class="text-lg sm:text-xl font-bold text-[#0F3D73] mt-0.5">
+            Afiș, mesaj de campanie și îndemn la acțiune (CTA)
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-6 items-stretch">
+          <!-- Afiș vizual -->
+          <div class="lg:col-span-5 rounded-2xl overflow-hidden border border-slate-300 shadow-md flex flex-col justify-between bg-gradient-to-b from-[#0F3D73] via-[#0b2d56] to-slate-950 text-white p-6">
+            <div>
+              <div class="flex items-center justify-between text-[11px] font-semibold uppercase tracking-wider text-[#FBBF24] border-b border-white/15 pb-2.5">
+                <span>Fundația HIPOLITECH • UPB</span>
+                <span class="team-code-mirror">SYSUPE001AC</span>
+              </div>
+
+              <div class="my-5 flex items-end justify-center gap-2 h-28 px-4" aria-hidden="true">
+                <div class="w-10 h-16 bg-[#C97A16]/90 rounded-t-md"></div>
+                <div class="w-14 h-24 bg-white/90 rounded-t-md"></div>
+                <div class="w-12 h-20 bg-[#C97A16] rounded-t-md"></div>
+                <div class="w-9 h-14 bg-blue-300/80 rounded-t-md"></div>
+              </div>
+
+              <h3 class="text-xl sm:text-2xl font-extrabold leading-tight text-center">
+                „Un loc în cămin poate schimba un destin!”
+              </h3>
+              <p class="mt-2.5 text-xs sm:text-sm text-slate-200 text-center leading-relaxed">
+                Sprijinim construirea unui nou cămin studențesc pentru studenții cu rezultate academice deosebite și pentru cei cu dificultăți financiare.
+              </p>
+            </div>
+
+            <div class="mt-6 pt-3 border-t border-white/15 text-center">
+              <a
+                href="https://fundatia.upb.ro/proiecte-si-evenimente/un-loc-in-camin-poate-schimba-un-destin/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block bg-[#C97A16] hover:bg-amber-600 text-white font-bold text-xs px-4 py-2 rounded-xl transition"
+              >
+                Informează-te pe fundatia.upb.ro ↗
+              </a>
+              <p class="text-[10px] text-slate-300 mt-2">
+                Repere: 1.250.000 lei (etapa inițială) • 100.000.000 lei (investiție totală estimată). Nu reprezintă rezervare de loc în cămin.
+              </p>
+            </div>
+          </div>
+
+          <!-- Text postare + CTA -->
+          <div class="lg:col-span-7 flex flex-col justify-between space-y-4">
+            <div class="rounded-xl bg-slate-50 border border-slate-200 p-5">
+              <h3 class="text-sm font-bold uppercase tracking-wide text-[#0F3D73] mb-2">Mesaj de campanie (postare / comunități)</h3>
+              <p class="text-sm text-slate-700 leading-relaxed">
+                Un loc în cămin poate schimba un destin! Pentru studenții cu rezultate academice deosebite și pentru cei cu dificultăți financiare, un spațiu sigur și modern de locuire și studiu în campus este esențial pe durata facultății.
+              </p>
+              <p class="text-sm text-slate-700 leading-relaxed mt-2.5">
+                Fundația HIPOLITECH derulează inițiativa de atragere a finanțării private pentru construirea unui nou cămin studențesc la POLITEHNICA București (etapă inițială estimată: 1.250.000 lei; investiție totală estimată: 100.000.000 lei). Fiecare contribuție susține obiectivul comun de finanțare al proiectului.
+              </p>
+            </div>
+
+            <div class="rounded-xl bg-blue-50/70 border border-blue-200 p-5">
+              <h3 class="text-sm font-bold uppercase tracking-wide text-[#0F3D73] mb-2">Îndemn la acțiune (CTA)</h3>
+              <ul class="text-sm text-slate-800 space-y-1.5">
+                <li><strong>1. Simulează impactul:</strong> Testează scenariile de contribuții, rata de conversie și bugetul campaniei (max. 15.000 lei) în tab-ul <em>Simulator Fundraising (6 luni)</em>.</li>
+                <li><strong>2. Mergi la sursa oficială:</strong> Consultă pagina campaniei Fundației HIPOLITECH pentru detalii oficiale.</li>
+              </ul>
+              <div class="mt-3">
+                <a
+                  href="https://fundatia.upb.ro/proiecte-si-evenimente/un-loc-in-camin-poate-schimba-un-destin/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1.5 text-sm font-bold text-[#0F3D73] hover:underline"
+                >
+                  Accesează pagina oficială HIPOLITECH ↗
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-slate-200 mt-10 py-5 px-4 sm:px-6 text-xs text-slate-500">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+      <div>
+        <strong>Cod echipă: <span class="team-code-mirror">SYSUPE001AC</span></strong> • Simulare educațională (fără plăți reale sau date personale).
+      </div>
+      <div>
+        <a
+          href="https://fundatia.upb.ro/proiecte-si-evenimente/un-loc-in-camin-poate-schimba-un-destin/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-[#0F3D73] font-semibold hover:underline"
+        >
+          fundatia.upb.ro — „Un loc în cămin poate schimba un destin!” ↗
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const SEGMENT_CONFIG = {
+      alumni: {
+        activeLabel: 'Segment activ: Absolvenți POLITEHNICA',
+        countLabel: 'Număr estimat de donatori individuali (6 luni)',
+        countHint: 'Valoare implicită de referință: 500 donatori individuali.',
+        avgLabel: 'Donație medie demonstrativă per persoană (lei)',
+        avgHint: 'Valoare implicită de referință: 100 lei (exclusiv demonstrativă).',
+        defaultCount: 500,
+        defaultAvg: 100,
+        defaultConv: 5,
+        companionGross: 200000,
+        companionNote: '+ 200.000 lei Companii și parteneri (referință)',
+        msgTitle: 'Mesaj responsabil — Absolvenți POLITEHNICA',
+        msgBody:
+          'Contribuțiile susțin obiectivul comun al Fundației HIPOLITECH pentru construirea unui nou cămin studențesc (prioritar pentru studenți merituoși și cu dificultăți financiare). Simulare exclusiv demonstrativă: donațiile nu cumpără o cameră sau un loc de cazare, nu garantează deductibilități fiscale neverificate și nu reprezintă plăți reale.'
+      },
+      corporate: {
+        activeLabel: 'Segment activ: Companii și parteneri',
+        countLabel: 'Număr estimat de sponsori corporate (6 luni)',
+        countHint: 'Valoare implicită de referință: 20 sponsori corporate.',
+        avgLabel: 'Contribuție medie demonstrativă per sponsor (lei)',
+        avgHint: 'Valoare implicită de referință: 10.000 lei (exclusiv demonstrativă).',
+        defaultCount: 20,
+        defaultAvg: 10000,
+        defaultConv: 4,
+        companionGross: 50000,
+        companionNote: '+ 50.000 lei Absolvenți POLITEHNICA (referință)',
+        msgTitle: 'Mesaj responsabil — Companii și parteneri',
+        msgBody:
+          'Sponsorizările susțin obiectivul comun al Fundației HIPOLITECH. Valorile sunt demonstrative și nu reprezintă oferte ferme, garanții de cazare, beneficii fiscale neverificate sau încasări automate.'
+      }
+    };
+
+    let activeSegment = 'alumni';
+
+    function formatLei(value) {
+      return new Intl.NumberFormat('ro-RO', { maximumFractionDigits: 0 }).format(Math.round(value)) + ' lei';
+    }
+
+    function formatLeiDecimals(value) {
+      return new Intl.NumberFormat('ro-RO', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(value) + ' lei';
+    }
+
+    function formatIntCeil(value) {
+      return new Intl.NumberFormat('ro-RO', { maximumFractionDigits: 0 }).format(Math.ceil(value));
+    }
+
+    function formatPct(value) {
+      return value.toLocaleString('ro-RO', { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + '%';
+    }
+
+    function syncTeamCode() {
+      const input = document.getElementById('teamCodeInput');
+      const code = (input && input.value.trim()) ? input.value.trim() : 'SYSUPE001AC';
+      const badge = document.getElementById('teamCodeBadge');
+      if (badge) badge.textContent = code;
+      document.querySelectorAll('.team-code-mirror').forEach((el) => {
+        el.textContent = code;
+      });
+    }
+
+    function switchTab(tabKey) {
+      const tabs = ['simulator', 'strategy', 'finance', 'ai-promo'];
+      tabs.forEach((key) => {
+        const panel = document.getElementById('tab-' + key);
+        const btn = document.getElementById('tab-btn-' + key);
+        const isActive = key === tabKey;
+
+        if (panel) panel.classList.toggle('hidden', !isActive);
+        if (btn) {
+          btn.className = isActive
+            ? 'tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap transition bg-[#0F3D73] text-white shadow-sm cursor-pointer'
+            : 'tab-btn px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap transition bg-slate-100 text-slate-700 hover:bg-slate-200 cursor-pointer';
+        }
+      });
+    }
+
+    function selectSegment(segKey) {
+      activeSegment = segKey;
+      const cfg = SEGMENT_CONFIG[segKey];
+
+      const alumniBtn = document.getElementById('seg-alumni-btn');
+      const corpBtn = document.getElementById('seg-corporate-btn');
+
+      if (segKey === 'alumni') {
+        alumniBtn.className = 'text-left p-3.5 rounded-xl border-2 border-[#0F3D73] bg-blue-50/70 transition focus:outline-none cursor-pointer';
+        corpBtn.className = 'text-left p-3.5 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 transition focus:outline-none cursor-pointer';
+      } else {
+        corpBtn.className = 'text-left p-3.5 rounded-xl border-2 border-[#0F3D73] bg-blue-50/70 transition focus:outline-none cursor-pointer';
+        alumniBtn.className = 'text-left p-3.5 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 transition focus:outline-none cursor-pointer';
+      }
+
+      document.getElementById('simActiveSegmentLabel').textContent = cfg.activeLabel;
+      document.getElementById('simCountLabel').textContent = cfg.countLabel;
+      document.getElementById('simCountHint').textContent = cfg.countHint;
+      document.getElementById('simAvgAmountLabel').textContent = cfg.avgLabel;
+      document.getElementById('simAvgAmountHint').textContent = cfg.avgHint;
+
+      document.getElementById('simCount').value = cfg.defaultCount;
+      document.getElementById('simAvgAmount').value = cfg.defaultAvg;
+      document.getElementById('simConversionRate').value = cfg.defaultConv;
+
+      document.getElementById('outCompanionNote').textContent = cfg.companionNote;
+      document.getElementById('outSegmentMsgTitle').textContent = cfg.msgTitle;
+      document.getElementById('outSegmentMsgBody').textContent = cfg.msgBody;
+
+      runSimulation();
+    }
+
+    function showError(msg) {
+      document.getElementById('simErrorText').textContent = msg;
+      document.getElementById('simErrorAlert').classList.remove('hidden');
+
+      const badge = document.getElementById('simStatusBadge');
+      badge.textContent = 'Date invalide';
+      badge.className = 'text-xs font-semibold px-3 py-1 rounded-full bg-rose-50 text-rose-800 border border-rose-200';
+    }
+
+    function clearError() {
+      document.getElementById('simErrorText').textContent = '';
+      document.getElementById('simErrorAlert').classList.add('hidden');
+
+      const badge = document.getElementById('simStatusBadge');
+      badge.textContent = 'Date valide';
+      badge.className = 'text-xs font-semibold px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200';
+    }
+
+    function runSimulation() {
+      try {
+        const rawCount = document.getElementById('simCount').value.trim();
+        const rawAvg = document.getElementById('simAvgAmount').value.trim();
+        const rawConv = document.getElementById('simConversionRate').value.trim();
+        const rawBudget = document.getElementById('simCampaignBudget').value.trim();
+
+        const count = Number(rawCount);
+        const avg = Number(rawAvg);
+        const conv = Number(rawConv);
+        const budget = Number(rawBudget);
+
+        if (rawCount === '' || !Number.isFinite(count) || count <= 0) {
+          showError('Numărul estimat de contribuții lipsește sau este invalid. Introduceți un număr mai mare decât 0.');
+          return;
+        }
+        if (rawAvg === '' || !Number.isFinite(avg) || avg <= 0) {
+          showError('Valoarea medie demonstrativă lipsește sau este invalidă. Introduceți o sumă mai mare decât 0 lei.');
+          return;
+        }
+        if (rawConv === '' || !Number.isFinite(conv) || conv <= 0 || conv > 100) {
+          showError('Rata de conversie introdusă este invalidă (' + (rawConv || 'lipsă') + '%). Trebuie să fie mai mare decât 0% și cel mult 100%.');
+          return;
+        }
+        if (rawBudget === '' || !Number.isFinite(budget) || budget < 0 || budget > 15000) {
+          showError('Bugetul campaniei trebuie să fie între 0 lei și maximum 15.000 lei.');
+          return;
+        }
+
+        clearError();
+
+        const cfg = SEGMENT_CONFIG[activeSegment];
+        const segmentGross = count * avg;
+        const totalGross = segmentGross + cfg.companionGross;
+        const netFunds = totalGross - budget;
+
+        const target250k = 250000;
+        const stage1_25M = 1250000;
+        const total100M = 100000000;
+
+        const eligibleContacts = count / (conv / 100);
+        const costPerContribution = budget / count;
+        const pct250k = (totalGross / target250k) * 100;
+        const pct1_25M = (totalGross / stage1_25M) * 100;
+        const pct100M = (totalGross / total100M) * 100;
+
+        document.getElementById('outSegmentGross').textContent = formatLei(segmentGross);
+        document.getElementById('outTotalGross').textContent = formatLei(totalGross);
+        document.getElementById('outNetFunds').textContent = formatLei(netFunds);
+        document.getElementById('outBudgetSubtext').textContent = 'Total brut − ' + formatLei(budget) + ' cost campanie';
+        document.getElementById('outEligibleReach').textContent = formatIntCeil(eligibleContacts);
+        document.getElementById('outCostPerContrib').textContent = formatLeiDecimals(costPerContribution);
+        document.getElementById('outCoverageDual').textContent =
+          formatPct(pct250k) + ' din 250k • ' + formatPct(pct1_25M) + ' din 1,25M';
+        document.getElementById('outTotalStageShare').textContent =
+          pct100M.toLocaleString('ro-RO', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '% din 100.000.000 lei investiție totală';
+
+        document.getElementById('outTargetPct').textContent = formatPct(pct250k);
+        document.getElementById('outProgressBar').style.width = Math.max(0, Math.min(100, pct250k)) + '%';
+
+        // Separare ilustrativă promisiuni vs. încasări pe baza totalului brut curent
+        const collectedIllustrativ = totalGross * 0.76;
+        const promisesPending = totalGross - collectedIllustrativ;
+        document.getElementById('outPromiseVsCollected').innerHTML =
+          'Din totalul brut simulat de <strong>' + formatLei(totalGross) +
+          '</strong>, o evidență ilustrativă separă <strong>' + formatLei(collectedIllustrativ) +
+          ' încasați efectiv</strong> de <strong>' + formatLei(promisesPending) +
+          ' promisiuni/angajamente neîncasate încă</strong>.';
+      } catch (err) {
+        showError('A apărut o eroare la calcularea scenariului. Verificați valorile introduse.');
+      }
+    }
+
+    function loadReferenceScenario() {
+      document.getElementById('simCampaignBudget').value = 15000;
+      selectSegment(activeSegment);
+    }
+
+    function triggerInvalidCaseDemo() {
+      document.getElementById('simConversionRate').value = 145;
+      runSimulation();
+    }
+
+    function clearSimulationInputs() {
+      document.getElementById('simCount').value = '';
+      document.getElementById('simAvgAmount').value = '';
+      runSimulation();
+    }
+
+    function updateFinanceModel() {
+      const alumniCount = Math.max(0, Number(document.getElementById('finAlumniCount').value) || 0);
+      const alumniAvg = Math.max(0, Number(document.getElementById('finAlumniAvg').value) || 0);
+      const corpCount = Math.max(0, Number(document.getElementById('finCorpCount').value) || 0);
+      const corpAvg = Math.max(0, Number(document.getElementById('finCorpAvg').value) || 0);
+
+      let budget = Number(document.getElementById('finBudget').value) || 0;
+      if (budget < 0) budget = 0;
+      if (budget > 15000) {
+        budget = 15000;
+        document.getElementById('finBudget').value = 15000;
+      }
+
+      const alumniGross = alumniCount * alumniAvg;
+      const corpGross = corpCount * corpAvg;
+      const totalGross = alumniGross + corpGross;
+      const netFunds = totalGross - budget;
+      const totalContributors = alumniCount + corpCount;
+      const costPerDonor = totalContributors > 0 ? budget / totalContributors : 0;
+
+      document.getElementById('finOutAlumniGross').textContent = formatLei(alumniGross);
+      document.getElementById('finOutCorpGross').textContent = formatLei(corpGross);
+      document.getElementById('finOutTotalGross').textContent = formatLei(totalGross);
+      document.getElementById('finOutCampaignCost').textContent = formatLei(budget);
+      document.getElementById('finOutNet').textContent = formatLei(netFunds);
+      document.getElementById('finOutCostPerDonor').textContent = formatLeiDecimals(costPerDonor);
+
+      // Sensibilitate 1: donație medie individuală -30%
+      const alumniAvgMinus30 = alumniAvg * 0.7;
+      const alumniGrossMinus30 = alumniCount * alumniAvgMinus30;
+      const grossMinus30 = alumniGrossMinus30 + corpGross;
+      const netMinus30 = grossMinus30 - budget;
+      document.getElementById('sensDrop30Desc').textContent =
+        `La ${formatLei(alumniAvgMinus30)} medie individuală: donații indiv. ${formatLei(alumniGrossMinus30)}, total brut ${formatLei(grossMinus30)}, fonduri nete ${formatLei(netMinus30)}.`;
+
+      // Sensibilitate 2: sponsori corporate înjumătățiți (-50%)
+      const corpCountHalf = Math.floor(corpCount / 2);
+      const corpGrossHalf = corpCountHalf * corpAvg;
+      const grossHalf = alumniGross + corpGrossHalf;
+      const netHalf = grossHalf - budget;
+      document.getElementById('sensHalfCorpDesc').textContent =
+        `La ${corpCountHalf} sponsori: sponsorizări ${formatLei(corpGrossHalf)}, total brut ${formatLei(grossHalf)}, fonduri nete ${formatLei(netHalf)}.`;
+
+      // Sensibilitate 3: ambele cumulate
+      const grossBoth = alumniGrossMinus30 + corpGrossHalf;
+      const netBoth = grossBoth - budget;
+      document.getElementById('sensBothDesc').textContent =
+        `Total brut ${formatLei(grossBoth)} și fonduri nete ${formatLei(netBoth)} (la buget campanie de ${formatLei(budget)}).`;
+
+      // Promisiuni vs. Încasări (ilustrativ: 80% individuali, 75% sponsorizări)
+      const recAlumni = alumniGross * 0.8;
+      const promAlumni = alumniGross - recAlumni;
+      const recCorp = corpGross * 0.75;
+      const promCorp = corpGross - recCorp;
+      const recTotal = recAlumni + recCorp;
+      const promTotal = promAlumni + promCorp;
+
+      document.getElementById('pvEstAlumni').textContent = formatLei(alumniGross);
+      document.getElementById('pvRecAlumni').textContent = formatLei(recAlumni);
+      document.getElementById('pvPromAlumni').textContent = formatLei(promAlumni);
+
+      document.getElementById('pvEstCorp').textContent = formatLei(corpGross);
+      document.getElementById('pvRecCorp').textContent = formatLei(recCorp);
+      document.getElementById('pvPromCorp').textContent = formatLei(promCorp);
+
+      document.getElementById('pvEstTotal').textContent = formatLei(totalGross);
+      document.getElementById('pvRecTotal').textContent = formatLei(recTotal);
+      document.getElementById('pvPromTotal').textContent = formatLei(promTotal);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      syncTeamCode();
+      runSimulation();
+      updateFinanceModel();
+    });
+  </script>
+</body>
+</html>
